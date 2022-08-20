@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Signin.css";
 
 import FacebookIcon from "@mui/icons-material/Facebook";
 function Signin() {
+  const [disable, setDisable] = useState(true);
+
   return (
     <div className="signin">
       <div className="signin__left">
@@ -18,10 +20,16 @@ function Signin() {
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/800px-Instagram_logo.svg.png?20160616034027" />
           </div>
           {/* inputs */}
-          <input type="text" placeholder="Phone number, username or email" />
+          <input type="text" placeholder="Phone Number, Username or Email" />
           <input type="password" placeholder="Password" />
           {/* button */}
-          <button>Log In</button>
+          {disable ? (
+            <button disabled className="disableBtn">
+              Sign In
+            </button>
+          ) : (
+            <button className="ableBtn">Sign In</button>
+          )}
 
           {/* line and or */}
           <div className="line"></div>

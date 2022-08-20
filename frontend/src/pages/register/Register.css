@@ -1,4 +1,4 @@
-.signin{
+.register{
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -8,7 +8,7 @@
     overflow: hidden;
     
 }
-.signin .signin__left{
+.register .register__left{
     width: 30%;
     height: 80%;
     display: flex;
@@ -16,18 +16,18 @@
     justify-content: flex-start;
     margin-right: 100px;
 }
-.signin__left img{
+.register__left img{
     width: 100%;
     height: 100%;
     object-fit: scale-down;
     transform: scale(1.8);
 }
-/* signin__container */
-.signin__container{
+/* register__container */
+.register__container{
     display: flex;
     flex-direction: column;
 }
-.signin__form{
+.register__form{
     width: 350px;
  /* margin-top: 50px; */
     display: flex;
@@ -40,7 +40,7 @@
   
     
 }
-.signin__form .logo{
+.register__form .logo{
     width: 150px;
     margin: 20px 0;
 }
@@ -49,14 +49,14 @@
     height: 100%;
     
 }
-.signin__form input{
+.register__form input{
     width: 90%;
     outline: none;
     border: 1px solid #ccc;
     padding: 10px;
     margin: 3px 0;
 }
-.signin__form .ableBtn{
+.register__form .ableBtn{
 width: 90%;
 outline: none;
 border: none;
@@ -68,7 +68,7 @@ border-radius: 3px;
 margin: 10px 0;
 transition: .2s;
 }
-.signin__form .ableBtn:hover{
+.register__form .ableBtn:hover{
     background-color: rgb(22, 92, 161);
     cursor: pointer;
 }
@@ -107,11 +107,22 @@ color: gray;
 }
 /* facebook__auth */
 .facebook__auth{
-    width: 70%;
+   
     display: flex;
+    background-color: dodgerblue;
+    width: 90%;
+outline: none;
+border: none;
+background-color: dodgerblue;
+color: #fff;
+padding: 4px;
+font-weight: 600;
+border-radius: 3px;
+margin: 10px 0;
+transition: .2s;
 }
 .facebook__auth{
-    color: #4267B2;
+    color: #fff;
     font-size: 14px;
     display: flex;
     align-items: center;
@@ -120,9 +131,10 @@ color: gray;
 }
 .facebook__auth:hover{
     cursor: pointer;
+    background-color: rgb(20, 86, 153);
 }
 .facebook__auth .facebook__icon{
-    color: #4267B2;
+    color: #fff;
     margin-right: 5px;
 }
 /* forgot password */
@@ -151,7 +163,7 @@ color: gray;
 
 /* Responsive */
 @media screen and (max-width:870px){
-    .signin .signin__left{
+    .register .register__left{
         display: none;
     }
     
