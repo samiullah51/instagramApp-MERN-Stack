@@ -135,3 +135,11 @@ color: gray;
 .form2 span:hover{
     cursor: pointer;
 }
+
+/* Responsive */
+@media screen and (max-width:870px){
+    .signin .signin__left{
+        display: none;
+    }
+    
+}
