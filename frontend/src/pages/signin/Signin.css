@@ -132,3 +132,6 @@ color: gray;
     color: dodgerblue;
     font-weight: bold;
 }
+.form2 span:hover{
+    cursor: pointer;
+}
