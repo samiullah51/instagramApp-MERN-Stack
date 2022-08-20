@@ -1,7 +1,9 @@
+import Signin from "./pages/signin/Signin";
+
 function App() {
   return (
-    <div className="App">
-      <h1>hello world</h1>
+    <div>
+      <Signin />
     </div>
   );
 }
