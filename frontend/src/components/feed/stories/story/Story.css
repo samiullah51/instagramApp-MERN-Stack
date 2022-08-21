@@ -1,0 +1,16 @@
+.story{
+    margin: 0 6px;
+    scroll-behavior: smooth;
+transition: .3s;
+}
+.story img{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    padding: 2px;
+    border: 2px solid var(--main-color);
+}
+.story p{
+    font-size: 11px;
+    text-align: center;
+}

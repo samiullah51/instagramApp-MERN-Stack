@@ -60,21 +60,16 @@ function Navbar() {
             >
               &times;
             </p>
-            <div className="list__item">
-              <AccountCircleOutlinedIcon />
-              <p>Profile</p>
-            </div>
-            <div className="list__item">
-              <BookmarkBorderOutlinedIcon />
-              <p>Saved</p>
-            </div>
-            <div className="list__item">
-              <SettingsOutlinedIcon />
-              <p>Setting</p>
-            </div>
-            <div className="list__item">
-              <AutorenewOutlinedIcon />
-              <p>Switch</p>
+            <div
+              style={{
+                width: "100%",
+                textAlign: "left",
+              }}
+            >
+              <p style={{ fontWeight: "bold" }}>Recent</p>
+              <div className="empty">
+                <p>No recent searches.</p>
+              </div>
             </div>
           </div>
         )}
