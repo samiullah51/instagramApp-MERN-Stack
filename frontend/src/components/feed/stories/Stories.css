@@ -35,3 +35,12 @@
     height: 30px;
     border-radius: 50%;
 }
+
+/* Responsive */
+@media screen and (max-width:650px) {
+    .stories{
+        width: 90vw;
+        margin: 10px  auto;
+    }
+ 
+}

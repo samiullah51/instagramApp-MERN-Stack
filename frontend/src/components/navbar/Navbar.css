@@ -135,3 +135,30 @@ color: rgb(36, 36, 36);
 .MuiSvgIcon-root:hover{
     cursor: pointer;
 }
+
+/* Responsive */
+@media screen and (max-width:650px) {
+    .navbar{
+        position: fixed;
+        top: 0;
+    }
+    .searchbox{
+        display: none;
+    }
+    .navbar{
+        justify-content: space-between;
+    }
+   .right__menu{
+    margin-left: 0px;
+   }
+   .right__menu .MuiSvgIcon-root{
+    width: 20px;
+    height: 20px;
+   }
+   .dropdown{
+    width: 200px;
+   }
+   .dropdown img{
+    width: 80px;
+   }
+}

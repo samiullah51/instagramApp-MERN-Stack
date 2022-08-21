@@ -105,6 +105,7 @@
     background-color: transparent;
     width: 60px;
     color: dodgerblue;
+    cursor: pointer;
 }
 .footer .disableBtn{
     font-weight: bold;
@@ -114,4 +115,14 @@
     width: 60px;
     color: dodgerblue;
     opacity: .5;
+}
+
+
+/* Responsive */
+@media screen and (max-width:650px) {
+
+    .post{
+        width: 90vw;
+        margin: 10px  auto;
+    }
 }
