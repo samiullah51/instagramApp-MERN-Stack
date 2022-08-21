@@ -1,0 +1,33 @@
+.navbar{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.navbar .dropdown{
+    width: 100px;
+}
+.dropdown img{
+    width: 100%;
+}
+.searchbox{
+    width: 250px;
+    margin-left: 200px;
+    margin-right: 100px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(224, 224, 224, 0.562);
+    padding: 7px 10px;
+    border-radius: 7px;
+}
+.searchbox .search__icon{
+    color: gray;
+    font-size: 20px;
+}
+.searchbox input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
