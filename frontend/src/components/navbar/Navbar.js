@@ -16,6 +16,7 @@ import AutorenewOutlinedIcon from "@mui/icons-material/AutorenewOutlined";
 function Navbar() {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
+  const [showSearchBox, setShowSearchBox] = useState(false);
   return (
     <div className="navbar">
       {/* Logo  */}
@@ -44,7 +45,39 @@ function Navbar() {
       {/* SearchBox */}
       <div className="searchbox">
         <SearchIcon className="search__icon" />
-        <input type="text" placeholder="Search" />
+        <input
+          type="text"
+          placeholder="Search"
+          onFocus={() => setShowSearchBox(true)}
+        />
+
+        {/* Search Box */}
+        {showSearchBox && (
+          <div className="dropdown__box">
+            <p
+              className="dismiss__searchbox"
+              onClick={() => setShowSearchBox(false)}
+            >
+              &times;
+            </p>
+            <div className="list__item">
+              <AccountCircleOutlinedIcon />
+              <p>Profile</p>
+            </div>
+            <div className="list__item">
+              <BookmarkBorderOutlinedIcon />
+              <p>Saved</p>
+            </div>
+            <div className="list__item">
+              <SettingsOutlinedIcon />
+              <p>Setting</p>
+            </div>
+            <div className="list__item">
+              <AutorenewOutlinedIcon />
+              <p>Switch</p>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Right Menu */}

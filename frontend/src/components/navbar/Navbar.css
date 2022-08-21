@@ -32,13 +32,23 @@ text-align: center;
     display: flex;
     align-items: center;
     font-size: 14px;
-    margin: 10px 0;
+    margin: 20px 0;
 }
 .list__item:hover{
     cursor: pointer;
 }
 .dropdown img{
     width: 100%;
+}
+.searchbox .dropdown__box::before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    position: absolute;
+    top: -3px;
+    right:50%;
+    transform: rotate(-45deg);
 }
 .searchbox{
     width: 250px;
@@ -49,6 +59,14 @@ text-align: center;
     background-color: rgba(224, 224, 224, 0.562);
     padding: 7px 10px;
     border-radius: 7px;
+    position: relative;
+}
+.dismiss__searchbox{
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 20px;
+    cursor: pointer;
 }
 .searchbox .search__icon{
     color: gray;
@@ -83,6 +101,17 @@ color: rgb(36, 36, 36);
 }
 .right__menu .list__item{
     margin: 20px 0;
+}
+.right__menu .dropdown__box::before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    position: absolute;
+    top: -8px;
+    right:10%;
+    transform: rotate(-45deg);
+   
 }
 .right__menu .dropdown__box .MuiSvgIcon-root{
     width: 20px;
