@@ -34,3 +34,84 @@
 .post .posterImg{
     width: 100%;
 }
+/* feedback */
+.feedback{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.feedback .feedback__left .MuiSvgIcon-root{
+ font-size: 25px;
+ margin-right: 20px;
+ color: rgba(0, 0, 0, 0.767);
+ cursor: pointer;
+}
+.feedback__right .MuiSvgIcon-root{
+ color: rgba(0, 0, 0, 0.767);
+ cursor: pointer;
+
+}
+.feedback .MuiSvgIcon-root:hover{
+    opacity: .7;
+}
+
+.container{
+    padding: 0 15px;
+}
+.container .likes{
+    font-weight: 500;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.98);
+
+}
+.container .comments{
+    color: gray;
+    font-size: 14px;
+    margin: 10px 0;
+}
+.container .timing{
+    color: gray;
+    font-size: 10px;
+    margin: 10px 0;
+}
+/* footer */
+.footer{
+    border-top: 1px solid #ccc;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.footer .MuiSvgIcon-root{
+    font-size: 30px;
+ color: rgba(0, 0, 0, 0.767);
+
+}
+.footer input{
+    width: 90%;
+    margin: 0 10px;
+    padding: 7px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+.footer .activeBtn{
+    font-weight: bold;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 60px;
+    color: dodgerblue;
+}
+.footer .disableBtn{
+    font-weight: bold;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 60px;
+    color: dodgerblue;
+    opacity: .5;
+}
