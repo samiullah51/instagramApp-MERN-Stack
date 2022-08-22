@@ -73,6 +73,7 @@
       background-color: #fff;
       width: 550px;
       z-index: 123;
+      border-radius: 10px;
     }
    .showIcon{
     color:#000;
