@@ -1,0 +1,43 @@
+.suggest{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.suggested__user{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.suggest img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 5px;
+
+}
+.suggest p{
+    font-size: 14px;
+}
+.suggest .follow{
+    background-color: dodgerblue;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    color: #fff;
+    font-size: 11px;
+    cursor: pointer;
+}
+.suggest .following{
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    color: #000;
+    font-size: 11px;
+}
