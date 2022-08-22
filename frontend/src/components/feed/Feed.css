@@ -21,6 +21,11 @@
     margin-right: 100px;
     padding: 20px;
     width: 400px;
+    transition: .3s;
+}
+
+.suggestions .MuiSvgIcon-root{
+    display: none;
 }
 .suggestion__header{
     display: flex;
@@ -49,8 +54,41 @@
     width: 2px;
 }
 .suggest__container::-webkit-scrollbar-track{
-    background-color: dodgerblue;
+    background-color: #ccc;
 }
 .suggest__container::-webkit-scrollbar-thumb{
-    background-color: var(--main-color);
+    background-color: rgb(148, 148, 148);
+}
+.showIcon{
+    position: sticky;
+    left: 0;
+    top: 80px;
+    color: transparent;
+}
+/*  */
+/* Responsive */
+@media screen and (max-width:650px) {
+    .suggestions{
+      transform: translate(-110%);
+      background-color: #fff;
+      width: 550px;
+      z-index: 123;
+    }
+   .showIcon{
+    color:#000;
+   }
+    .suggestions.hide{
+       display: none;
+
+    }
+    .suggestions .hideIcon{
+        display: block;
+        position: relative;
+        top: -20px;
+        left: -16px;
+    }
+    .suggest__container::-webkit-scrollbar{
+        display: none;
+    }
+ 
 }

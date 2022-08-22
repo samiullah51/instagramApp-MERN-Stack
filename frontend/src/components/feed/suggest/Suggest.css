@@ -41,3 +41,16 @@
     color: #000;
     font-size: 11px;
 }
+/* Responsive */
+@media screen and (max-width:650px) {
+
+
+  .suggested__user{
+margin-right: 80px;
+width: 100%;
+  }
+  .suggested__user p{
+    min-width: 100%;
+  }
+ 
+}
