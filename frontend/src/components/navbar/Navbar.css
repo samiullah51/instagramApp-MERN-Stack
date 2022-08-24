@@ -26,6 +26,37 @@ border-radius: 5px;
 top:40px;
 left: 0;
 text-align: center;
+max-height: 220px;
+overflow-y: scroll;
+}
+.filter__data{
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    padding: 5px;
+
+}
+.filter__data p{
+    font-size: 13px;
+}
+.filter__data img{
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.filter__data:hover{
+    cursor: pointer;
+    background-color: rgba(204, 204, 204, 0.397);
+}
+.dropdown__box::-webkit-scrollbar{
+    width: 2px;
+}
+.dropdown__box::-webkit-scrollbar-track{
+    background-color: #ccc
+}
+.dropdown__box::-webkit-scrollbar-thumb{
+    background-color: gray;
 }
 .dropdown__box .MuiSvgIcon-root{
     width: 20px;
@@ -77,10 +108,11 @@ text-align: center;
     font-weight: 500;
 }
 .dismiss__searchbox{
-    position: absolute;
-    top: 0;
-    right: 5px;
-    font-size: 20px;
+    position: sticky;
+    top: -10px;
+    left: 0px;
+    margin-left: 240px;
+    font-size: 25px;
     cursor: pointer;
 }
 .searchbox .search__icon{

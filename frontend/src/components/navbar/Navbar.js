@@ -13,18 +13,22 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import AutorenewOutlinedIcon from "@mui/icons-material/AutorenewOutlined";
+import { data } from "../feed/stories/data";
 function Navbar() {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
   const [showSearchBox, setShowSearchBox] = useState(false);
   const [filter, setFilter] = useState("");
   const [filterData, setFilterData] = useState([]);
-  const data = ["sami", "kamal", "jamal"];
   // handleFilter
   const handleFilter = () => {
-    setFilterData(data.filter((val) => val.includes(filter)));
+    setFilterData(
+      data.filter((val) =>
+        val.username.toLowerCase().includes(filter.toLowerCase())
+      )
+    );
   };
-  console.log("data", filterData);
+
   return (
     <div className="navbar">
       {/* Logo  */}
@@ -77,10 +81,22 @@ function Navbar() {
                 textAlign: "left",
               }}
             >
-              <p style={{ fontWeight: "bold" }}>Recent</p>
-              <div className="empty">
-                <p>No recent searches.</p>
-              </div>
+              {/* Searchded Data */}
+              {filter && filterData.length > 0 ? (
+                filterData.map((filter) => (
+                  <div className="filter__data">
+                    <img src={filter.img} />
+                    <p>{filter.username}</p>
+                  </div>
+                ))
+              ) : (
+                <>
+                  <p style={{ fontWeight: "bold" }}>Recent</p>
+                  <div className="empty">
+                    <p>No recent searches.</p>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         )}
