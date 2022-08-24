@@ -6,7 +6,8 @@
     padding: 20px;
 }
 .divline{
-    width: 100%;
+    width: 90%;
+    margin: auto;
     height: 1px;
     background-color: #ccc;
 }

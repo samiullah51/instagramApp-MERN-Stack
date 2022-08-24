@@ -1,0 +1,15 @@
+.posts{
+    padding: 20px;
+    width: 95%;
+    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.posts img{
+    width: 300px;
+    height: 300px;
+    margin: 15px;
+}
