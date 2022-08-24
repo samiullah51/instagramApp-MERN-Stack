@@ -5,7 +5,10 @@ function Posts() {
   return (
     <div className="posts">
       {data.map((user) => (
-        <img src={user.img} />
+        <div className="single__post">
+          <img src={user.img} />
+          <div className="overlay"></div>
+        </div>
       ))}
     </div>
   );
