@@ -17,6 +17,14 @@ function Navbar() {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
   const [showSearchBox, setShowSearchBox] = useState(false);
+  const [filter, setFilter] = useState("");
+  const [filterData, setFilterData] = useState([]);
+  const data = ["sami", "kamal", "jamal"];
+  // handleFilter
+  const handleFilter = () => {
+    setFilterData(data.filter((val) => val.includes(filter)));
+  };
+  console.log("data", filterData);
   return (
     <div className="navbar">
       {/* Logo  */}
@@ -48,7 +56,10 @@ function Navbar() {
         <input
           type="text"
           placeholder="Search"
+          value={filter}
           onFocus={() => setShowSearchBox(true)}
+          onChange={(e) => setFilter(e.target.value)}
+          onKeyUp={handleFilter}
         />
 
         {/* Search Box */}
