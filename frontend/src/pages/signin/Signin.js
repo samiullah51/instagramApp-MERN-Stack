@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Signin.css";
 
 import FacebookIcon from "@mui/icons-material/Facebook";
+import { Link } from "react-router-dom";
 function Signin() {
   const [disable, setDisable] = useState(true);
 
@@ -47,7 +48,10 @@ function Signin() {
         </div>
         <div className="signin__form form2">
           <p>
-            Don't have an account? <span>Sign up</span>
+            Don't have an account?
+            <span>
+              <Link to="/register">Sign up</Link>
+            </span>
           </p>
         </div>
       </div>

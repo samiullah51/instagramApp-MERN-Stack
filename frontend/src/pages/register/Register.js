@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Register.css";
 
 import FacebookIcon from "@mui/icons-material/Facebook";
+import { Link } from "react-router-dom";
 function Register() {
   const [disable, setDisable] = useState(true);
   return (
@@ -51,7 +52,10 @@ function Register() {
         </div>
         <div className="register__form form2">
           <p>
-            Have an account? <span>Log In</span>
+            Have an account?{" "}
+            <span>
+              <Link to="/signin">Log In</Link>
+            </span>
           </p>
         </div>
       </div>

@@ -141,9 +141,11 @@ color: gray;
    font-size: 14px;
  
 }
-.form2 span{
+.form2 a{
     color: dodgerblue;
     font-weight: bold;
+    text-decoration: none;
+    margin: 0 5px;
 }
 .form2 span:hover{
     cursor: pointer;
