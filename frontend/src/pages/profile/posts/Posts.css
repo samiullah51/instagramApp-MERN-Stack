@@ -12,22 +12,53 @@
     margin: 10px 0;
     width: 300px;
     height: 300px;
+    background-color: rebeccapurple;
 }
 .single__post img{
     width: 100%;
     height: 100%;
     cursor: pointer;
 }
-
-.single__post .overlay{
+.single__post .MuiSvgIcon-root{
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.568);
-    display: none;
+    top: -10px;
+    left: -10px;
+    color: #fff;
+    background-color: var(--main-color);
+    padding: 2px;
+    border-radius: 50%;
+    font-size: 25px;
+
 }
-.single__post img:hover +  .overlay{
-   display: block;
+.single__post .MuiSvgIcon-root:hover{
+    cursor: pointer;
+    opacity: .9;
+}
+
+/* Responsive */
+@media screen and (max-width:1150px) {
+    .single__post{
+        width: 210px;
+        height: 210px;
+    }
+
+}
+@media screen and (max-width:650px) {
+    .single__post{
+        width: 180px;
+        height: 180px;
+    }
+
+}
+
+@media screen and (max-width:500px) {
+    .posts{
+        width: 100%;
+        
+    }
+    .single__post{
+        width: 100%;
+        height: 250px;
+    }
+     
 }

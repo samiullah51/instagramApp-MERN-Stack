@@ -14,6 +14,11 @@
 }
 .right{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    
     
 }
 .right__header{
@@ -53,4 +58,59 @@
     margin: 0 25px;
     color: #000;
     font-weight: 700;
+}
+/* Responsive */
+@media screen and (max-width:900px) {
+    .profiledata{
+        width: 100%;
+    }
+.right__header .header__username{
+    font-size: 20px;
+}
+.right__header button{
+    font-size: 12px;
+    width: 100px;
+}
+}
+@media screen and (max-width:650px) {
+    .profiledata img{
+        width: 100px;
+        height: 100px;
+    }
+    .right{
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+}
+@media screen and (max-width:500px) {
+    .profiledata{
+        width: 100%;
+        flex-direction: column;
+    }
+   .profiledata img{
+    width: 200px;
+    height: 200px;
+    border: 2px solid var(--main-color);
+    padding: 2px;
+   }
+.right .right__header{
+    font-size: 20px;
+    width: 120%;
+    margin: auto;
+    margin-left: -30px;
+}
+ .right .username{
+    text-align: center;
+   width: 100%;
+   font-size: 20px;
+   margin: 10px 0;
+}
+.right__header button{
+    font-size: 11px;
+}
+
 }

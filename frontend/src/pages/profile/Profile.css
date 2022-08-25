@@ -11,3 +11,12 @@
     height: 1px;
     background-color: #ccc;
 }
+
+@media screen and (max-width:500px) {
+.profile{
+    width: 95%;
+}
+.divline{
+    margin-top: 40px;
+}
+}
