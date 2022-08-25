@@ -14,6 +14,7 @@ import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlin
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import AutorenewOutlinedIcon from "@mui/icons-material/AutorenewOutlined";
 import { data } from "../feed/stories/data";
+import { Link } from "react-router-dom";
 function Navbar() {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
@@ -33,7 +34,9 @@ function Navbar() {
     <div className="navbar">
       {/* Logo  */}
       <div className="dropdown">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/800px-Instagram_logo.svg.png?20160616034027" />
+        <Link to="/">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/800px-Instagram_logo.svg.png?20160616034027" />
+        </Link>
         <KeyboardArrowDownOutlinedIcon
           fontSize="medium"
           onClick={() => setShowDropdown(!showDropdown)}
@@ -117,10 +120,12 @@ function Navbar() {
         {/* Profile Dropdown */}
         {showProfile && (
           <div className="dropdown__box">
-            <div className="list__item">
-              <AccountCircleOutlinedIcon />
-              <p>Profile</p>
-            </div>
+            <Link to="/profile">
+              <div className="list__item">
+                <AccountCircleOutlinedIcon />
+                <p>Profile</p>
+              </div>
+            </Link>
             <div className="list__item">
               <BookmarkBorderOutlinedIcon />
               <p>Saved</p>

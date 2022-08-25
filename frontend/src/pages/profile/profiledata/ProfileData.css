@@ -11,6 +11,8 @@
     height: 150px;
     border-radius: 50%;
     margin:0 5%;
+    border: 2px solid var(--main-color);
+    padding: 2px;
 }
 .right{
     width: 100%;
@@ -94,8 +96,6 @@
    .profiledata img{
     width: 200px;
     height: 200px;
-    border: 2px solid var(--main-color);
-    padding: 2px;
    }
 .right .right__header{
     font-size: 20px;
@@ -111,6 +111,9 @@
 }
 .right__header button{
     font-size: 11px;
+}
+.followers p{
+    text-align: center;
 }
 
 }

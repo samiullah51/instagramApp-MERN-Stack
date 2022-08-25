@@ -10,6 +10,11 @@
    z-index: 11;
     background-color: #fff;
 }
+.navbar a{
+    text-decoration: none;
+color: rgb(36, 36, 36);
+
+}
 .navbar .dropdown{
     width: 100px;
     display: flex;
