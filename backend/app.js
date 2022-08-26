@@ -11,6 +11,9 @@ dotenv.config();
 // DB Connection
 connection();
 
+// Config JSON
+app.use(express.json());
+
 // api routes
 app.use("/api/user", userRouter);
 
