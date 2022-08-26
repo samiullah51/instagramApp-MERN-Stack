@@ -1,6 +1,8 @@
 const User = require("../models/User");
 const router = require("express").Router();
 const CryptoJS = require("crypto-js");
+const JWT = require("jsonwebtoken");
+const { verifyToken } = require("./verifyToken");
 // Register a new User
 router.post("/register", async (req, res) => {
   // Check exist user
@@ -46,20 +48,24 @@ router.post("/login", async (req, res) => {
       res.status(401).json("Invalid Credentials");
       return false;
     }
-    // Token
-    // const token = JWT.sign(
-    //   {
-    //     id: user._id,
-    //   },
-    //   process.env.JWT_SEC,
-    //   { expiresIn: "3d" }
-    // );
-    // const { password, ...others } = user._doc;
-    // res.header("auth-token", token).json({ ...others, token });
-    res.status(200).json({ message: "Logged in Successfully" });
+
+    // Create Token
+    const token = JWT.sign(
+      {
+        id: user._id,
+      },
+      process.env.PASS_SEC,
+      { expiresIn: "3d" }
+    );
+    const { password, ...others } = user._doc;
+    res.header("auth-token", token).json({ ...others, token });
   } catch (err) {
     res.status(500).json(err.message);
   }
 });
 
+// Get all users
+router.get("/allusers", verifyToken, (req, res) => {
+  res.json("all users are here");
+});
 module.exports = router;
