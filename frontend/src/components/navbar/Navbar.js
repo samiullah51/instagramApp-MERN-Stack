@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import SearchIcon from "@mui/icons-material/Search";
 import HomeIcon from "@mui/icons-material/Home";
-import MapsUgcOutlinedIcon from "@mui/icons-material/MapsUgcOutlined";
 import ControlPointIcon from "@mui/icons-material/ControlPoint";
 import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -13,6 +12,8 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import AutorenewOutlinedIcon from "@mui/icons-material/AutorenewOutlined";
+import AddCircleOutline from "@mui/icons-material/AddCircleOutline";
+
 import { data } from "../feed/stories/data";
 import { Link } from "react-router-dom";
 function Navbar() {
@@ -21,6 +22,7 @@ function Navbar() {
   const [showSearchBox, setShowSearchBox] = useState(false);
   const [filter, setFilter] = useState("");
   const [filterData, setFilterData] = useState([]);
+  const [modal, setModal] = useState(false);
   // handleFilter
   const handleFilter = () => {
     setFilterData(
@@ -32,6 +34,34 @@ function Navbar() {
 
   return (
     <div className="navbar">
+      {/* Overlay */}
+      {modal && (
+        <div className="overlay">
+          <p className="dismiss__overlay" onClick={() => setModal(false)}>
+            &times;
+          </p>
+          <div className="post__container">
+            {/* header */}
+            <div className="post__header">
+              <p>Create new post</p>
+            </div>
+            {/* body */}
+            <div className="post__body">
+              <textarea placeholder="Description..." />
+              <img src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTc5OTk2ODUyMTMxNzM0ODcy/gettyimages-1229892983-square.jpg" />
+              <label>
+                <input type="file" />
+                <AddCircleOutline />
+              </label>
+            </div>
+            {/* header */}
+            <div className="post__footer">
+              <button className="cancel__btn">Cancel</button>
+              <button className="post__btn">Post</button>
+            </div>
+          </div>
+        </div>
+      )}
       {/* Logo  */}
       <div className="dropdown">
         <Link to="/">
@@ -108,8 +138,7 @@ function Navbar() {
       {/* Right Menu */}
       <div className="right__menu">
         <HomeIcon />
-        <MapsUgcOutlinedIcon />
-        <ControlPointIcon />
+        <ControlPointIcon onClick={() => setModal(true)} />
         <ExploreOutlinedIcon />
         <FavoriteBorderIcon />
         <img
