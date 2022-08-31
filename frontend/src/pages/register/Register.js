@@ -1,10 +1,26 @@
 import React, { useState } from "react";
 import "./Register.css";
-
+import axios from "axios";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import { Link } from "react-router-dom";
 function Register() {
-  const [disable, setDisable] = useState(true);
+  const [email, setEmail] = useState("");
+  const [fullName, setFullname] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  // handleRegister
+  const handleRegister = async () => {
+    const newUser = await axios.post(
+      "http://localhost:5000/api/user/register",
+      {
+        email,
+        fullName,
+        username,
+        password,
+      }
+    );
+    console.log(newUser);
+  };
   return (
     <div className="register">
       <div className="register__left">
@@ -37,17 +53,39 @@ function Register() {
           {/* line and or */}
           <div className="line"></div>
           {/* inputs */}
-          <input type="text" placeholder="Phone Number or Email" />
-          <input type="text" placeholder="Full Name" />
-          <input type="text" placeholder="Username" />
-          <input type="password" placeholder="Password" />
+          <input
+            type="text"
+            placeholder="Phone Number or Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Full Name"
+            value={fullName}
+            onChange={(e) => setFullname(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
           {/* button */}
-          {disable ? (
+          {!email || !fullName || !username || !password ? (
             <button disabled className="disableBtn">
               Sign Up
             </button>
           ) : (
-            <button className="ableBtn">Sign Up</button>
+            <button className="ableBtn" onClick={handleRegister}>
+              Sign Up
+            </button>
           )}
         </div>
         <div className="register__form form2">

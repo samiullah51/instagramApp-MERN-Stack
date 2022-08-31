@@ -23,6 +23,9 @@ function Navbar() {
   const [filter, setFilter] = useState("");
   const [filterData, setFilterData] = useState([]);
   const [modal, setModal] = useState(false);
+  const [image, setImage] = useState(null);
+  const [showImg, setShowImg] = useState(null);
+  const [desc, setDesc] = useState("");
   // handleFilter
   const handleFilter = () => {
     setFilterData(
@@ -31,7 +34,20 @@ function Navbar() {
       )
     );
   };
-
+  // handleCancel
+  const handleCancel = () => {
+    setImage("");
+    setShowImg("");
+    setDesc("");
+    setModal(false);
+  };
+  //handleChange
+  const handleChange = (e) => {
+    if (e.target.files[0]) {
+      setImage(e.target.files[0]);
+      setShowImg(URL.createObjectURL(e.target.files[0]));
+    }
+  };
   return (
     <div className="navbar">
       {/* Overlay */}
@@ -48,15 +64,17 @@ function Navbar() {
             {/* body */}
             <div className="post__body">
               <textarea placeholder="Description..." />
-              <img src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTc5OTk2ODUyMTMxNzM0ODcy/gettyimages-1229892983-square.jpg" />
+              {showImg && <img src={showImg} />}
               <label>
-                <input type="file" />
+                <input type="file" onChange={handleChange} />
                 <AddCircleOutline />
               </label>
             </div>
             {/* header */}
             <div className="post__footer">
-              <button className="cancel__btn">Cancel</button>
+              <button className="cancel__btn" onClick={handleCancel}>
+                Cancel
+              </button>
               <button className="post__btn">Post</button>
             </div>
           </div>

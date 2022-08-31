@@ -2,9 +2,12 @@ const express = require("express");
 const dotenv = require("dotenv");
 const app = express();
 const connection = require("./connection");
+const cors = require("cors");
 // Import routes
 const userRouter = require("./routes/user");
 
+// Cors Configuration
+app.use(cors());
 // dotenv Configuration
 dotenv.config();
 
