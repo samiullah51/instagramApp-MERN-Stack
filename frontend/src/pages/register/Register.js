@@ -2,24 +2,30 @@ import React, { useState } from "react";
 import "./Register.css";
 import axios from "axios";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 function Register() {
   const [email, setEmail] = useState("");
   const [fullName, setFullname] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  let navigate = useNavigate();
   // handleRegister
   const handleRegister = async () => {
-    const newUser = await axios.post(
-      "http://localhost:5000/api/user/register",
-      {
-        email,
-        fullName,
-        username,
-        password,
-      }
-    );
-    console.log(newUser);
+    try {
+      const newUser = await axios.post(
+        "http://localhost:5000/api/user/register",
+        {
+          email,
+          fullName,
+          username,
+          password,
+        }
+      );
+      navigate("/signin", { replace: true });
+      console.log(newUser);
+    } catch (err) {
+      console.log(err.response.data);
+    }
   };
   return (
     <div className="register">
@@ -55,7 +61,7 @@ function Register() {
           {/* inputs */}
           <input
             type="text"
-            placeholder="Phone Number or Email"
+            placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
