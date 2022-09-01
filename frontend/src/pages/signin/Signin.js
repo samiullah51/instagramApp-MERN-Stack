@@ -4,10 +4,16 @@ import "./Signin.css";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { LOG_IN } from "../../redux/user.js/userActions";
+import { useNavigate } from "react-router-dom";
+
 function Signin() {
-  const [disable, setDisable] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  let navigate = useNavigate();
+  const user = useSelector((state) => state.user);
 
   // handleSignin
   const handleSignin = async () => {
@@ -16,7 +22,8 @@ function Signin() {
         email,
         password,
       });
-      console.log(user);
+      dispatch({ type: LOG_IN, payload: user.data });
+      navigate("/", { replace: true });
     } catch (err) {
       console.log(err.response.data);
     }

@@ -4,10 +4,11 @@ import Profile from "./pages/profile/Profile";
 import Register from "./pages/register/Register";
 import Signin from "./pages/signin/Signin";
 import ProtectedRoutes from "./protectedRoutes";
-
+import { Provider } from "react-redux";
+import store from "./redux/store";
 function App() {
   return (
-    <div>
+    <Provider store={store}>
       <Routes>
         <Route element={<ProtectedRoutes />}>
           <Route index path="/" element={<Home />} />
@@ -16,7 +17,7 @@ function App() {
         <Route path="register" element={<Register />} />
         <Route path="signin" element={<Signin />} />
       </Routes>
-    </div>
+    </Provider>
   );
 }
 
