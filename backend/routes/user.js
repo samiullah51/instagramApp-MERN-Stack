@@ -65,7 +65,12 @@ router.post("/login", async (req, res) => {
 });
 
 // Get all users
-router.get("/allusers", verifyToken, (req, res) => {
-  res.json("all users are here");
+router.get("/allusers", verifyToken, async (req, res) => {
+  try {
+    const allUsers = await User.find();
+    res.status(200).json(allUsers);
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
 });
 module.exports = router;
