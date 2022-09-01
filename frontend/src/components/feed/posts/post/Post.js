@@ -16,12 +16,12 @@ function Post({ post }) {
     <div className="post">
       <div className="post__header">
         <div className="post__info">
-          <img src={post.img} alt="profile picture" />
+          <img src={post.profilePic} alt="profile picture" />
           <p className="post__username">{post.username}</p>
         </div>
         <MoreHorizIcon />
       </div>
-      <img src={post.img} alt="poster" className="posterImg" />
+      <img src={post.poster} alt="poster" className="posterImg" />
       {/* Feedback */}
       <div className="feedback">
         <div className="feedback__left">
