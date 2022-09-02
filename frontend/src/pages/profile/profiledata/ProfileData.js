@@ -8,7 +8,7 @@ function ProfileData() {
   const user = useSelector((state) => state.user);
   return (
     <div className="profiledata">
-      <img src={data[0].img} />
+      <img src={user.profilePic} />
       <div className="right">
         {/* right header */}
         <div className="right__header">
