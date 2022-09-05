@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
-=======
+
 # MERN Stack Instagram App
 ## Description
 This is the clone of Instagram app using the modern technologies.  
