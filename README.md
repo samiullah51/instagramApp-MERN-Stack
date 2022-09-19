@@ -1,6 +1,5 @@
 
 # MERN Stack Instagram App
-## Description
 This is the clone of Instagram app using the modern technologies.  
 
 ## Frontend Technologies
