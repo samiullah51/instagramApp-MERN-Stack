@@ -10,7 +10,6 @@ Node/Express
 
 ## Database
 MongoDB use as a databse.
->>>>>>> 920c431bd2653aa4f34ee941431d3cfbe46146be
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
