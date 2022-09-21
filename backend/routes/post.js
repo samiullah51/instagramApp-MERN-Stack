@@ -29,6 +29,15 @@ router.get("/allposts/:userId", async (req, res) => {
   }
 });
 
+// Delete a specific post
+router.delete("/delete/:postId", async (req, res) => {
+  try {
+    const delPost = await Post.find({_id:req.params.postId});
+    res.status(200).json(delPost);
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
+});
 // Get all posts
 router.get("/allposts", async (req, res) => {
   try {

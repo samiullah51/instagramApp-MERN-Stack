@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
-=======
-# MERN Stack Instagram App
-## Description
-This is the clone of Instagram app using the modern technologies.  
+
+# MERN Stack Instagram Application
+This is the clone of Instagram Application using the modern technologies.  
 
 ## Frontend Technologies
 React/Redux + CSS
@@ -13,7 +10,6 @@ Node/Express
 
 ## Database
 MongoDB use as a databse.
->>>>>>> 920c431bd2653aa4f34ee941431d3cfbe46146be
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
