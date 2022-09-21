@@ -23,7 +23,7 @@ function Posts() {
       {!loading ? (
         posts.map((post) => <Post post={post} />)
       ) : (
-        <h2>Loading...</h2>
+        <img src = "https://i.pinimg.com/originals/be/ce/0c/bece0c797cb134aefb2cb836578c9249.gif"/>
       )}
     </div>
   );
