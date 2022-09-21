@@ -21,7 +21,7 @@ function Posts() {
   return (
     <div>
       {!loading ? (
-        posts.map((post) => <Post post={post} />)
+        posts.map((post) => <Post key = {post._id} post={post} />)
       ) : (
         <img src = "https://i.pinimg.com/originals/be/ce/0c/bece0c797cb134aefb2cb836578c9249.gif"/>
       )}

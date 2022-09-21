@@ -18,7 +18,7 @@ function Stories() {
   return (
     <div className="stories">
       {data.map((user) => (
-        <Story user={user} transform={transform} />
+        <Story key = {user.id} user={user} transform={transform} />
       ))}
 
       {transform < (data.length - 6) * 60 && (

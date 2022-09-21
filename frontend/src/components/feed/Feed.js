@@ -39,7 +39,7 @@ function Feed() {
         {/* Suggestion */}
         <div className="suggest__container">
           {data.map((suggest) => (
-            <Suggest suggest={suggest} />
+            <Suggest key = {suggest.id} suggest={suggest} />
           ))}
         </div>
       </div>
