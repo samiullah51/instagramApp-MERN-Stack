@@ -8,6 +8,7 @@ import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlin
 import BookmarkOutlinedIcon from "@mui/icons-material/BookmarkOutlined";
 import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
 import SentimentSatisfiedIcon from "@mui/icons-material/SentimentSatisfied";
+
 function Post({ post }) {
   const [isLike, setIsLike] = useState(false);
   const [tag, setTag] = useState(false);
