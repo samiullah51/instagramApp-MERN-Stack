@@ -23,6 +23,7 @@ function Signin() {
         password,
       });
       dispatch({ type: LOG_IN, payload: user.data });
+      localStorage.setItem("user", JSON.stringify(user.data));
       navigate("/", { replace: true });
     } catch (err) {
       console.log(err.response.data);

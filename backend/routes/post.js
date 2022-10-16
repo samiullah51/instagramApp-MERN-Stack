@@ -22,7 +22,9 @@ router.post("/new", async (req, res) => {
 // Get all posts of a specific user
 router.get("/allposts/:userId", async (req, res) => {
   try {
-    const allPosts = await Post.find({ userId: req.params.userId });
+    const allPosts = await Post.find({ userId: req.params.userId }).sort({
+      createdAt: -1,
+    });
     res.status(200).json(allPosts);
   } catch (err) {
     res.status(500).json(err.message);
@@ -32,7 +34,7 @@ router.get("/allposts/:userId", async (req, res) => {
 // Delete a specific post
 router.delete("/delete/:postId", async (req, res) => {
   try {
-    const delPost = await Post.find({_id:req.params.postId});
+    const delPost = await Post.find({ _id: req.params.postId });
     res.status(200).json(delPost);
   } catch (err) {
     res.status(500).json(err.message);

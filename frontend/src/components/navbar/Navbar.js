@@ -13,9 +13,11 @@ import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlin
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import AutorenewOutlinedIcon from "@mui/icons-material/AutorenewOutlined";
 import AddCircleOutline from "@mui/icons-material/AddCircleOutline";
-
 import { data } from "../feed/stories/data";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { storage } from "../../firebase";
+import axios from "axios";
 function Navbar() {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
@@ -26,6 +28,11 @@ function Navbar() {
   const [image, setImage] = useState(null);
   const [showImg, setShowImg] = useState(null);
   const [desc, setDesc] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [progress, setProgress] = useState(0);
+
+  const user = useSelector((state) => state.user);
+  const navigate = useNavigate();
   // handleFilter
   const handleFilter = () => {
     setFilterData(
@@ -48,6 +55,51 @@ function Navbar() {
       setShowImg(URL.createObjectURL(e.target.files[0]));
     }
   };
+  // handle post
+  const handlePost = () => {
+    console.log("posting....");
+    setLoading(true);
+    const uploadTask = storage.ref(`images/${image.name}`).put(image);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        setProgress(
+          Math.floor(snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
+      },
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        storage
+          .ref("images")
+          .child(image.name)
+          .getDownloadURL()
+          .then(async (url) => {
+            const newPost = await axios.post(
+              "http://localhost:5000/api/post/new",
+              {
+                userId: user._id,
+                username: user.username,
+                profilePic: user.profilePic,
+                desc: desc,
+                poster: url,
+              }
+            );
+            setLoading(false);
+            setModal(false);
+            console.log("posted");
+            window.location.reload();
+          });
+      }
+    );
+  };
+
+  // handle logout
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate("/signin");
+  };
   return (
     <div className="navbar">
       {/* Overlay */}
@@ -63,7 +115,11 @@ function Navbar() {
             </div>
             {/* body */}
             <div className="post__body">
-              <textarea placeholder="Description..." />
+              <textarea
+                placeholder="Description..."
+                value={desc}
+                onChange={(e) => setDesc(e.target.value)}
+              />
               {showImg && <img src={showImg} />}
               <label>
                 <input type="file" onChange={handleChange} />
@@ -75,7 +131,9 @@ function Navbar() {
               <button className="cancel__btn" onClick={handleCancel}>
                 Cancel
               </button>
-              <button className="post__btn">Post</button>
+              <button className="post__btn" onClick={handlePost}>
+                {loading ? "Posting..." : "Post"}
+              </button>
             </div>
           </div>
         </div>
@@ -181,9 +239,9 @@ function Navbar() {
               <SettingsOutlinedIcon />
               <p>Setting</p>
             </div>
-            <div className="list__item">
+            <div className="list__item" onClick={handleLogout}>
               <AutorenewOutlinedIcon />
-              <p>Switch</p>
+              <p>Log Out</p>
             </div>
           </div>
         )}

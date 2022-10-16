@@ -2,7 +2,7 @@ import { LOG_IN } from "./userActions";
 
 // initial States
 const initialState = {
-  user: null,
+  user: JSON.parse(localStorage.getItem("user")),
 };
 
 // userReducer

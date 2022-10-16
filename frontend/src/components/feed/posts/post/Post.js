@@ -22,6 +22,7 @@ function Post({ post }) {
         </div>
         <MoreHorizIcon />
       </div>
+      <p style={{ padding: "10px" }}>{post.desc}</p>
       <img src={post.poster} alt="poster" className="posterImg" />
       {/* Feedback */}
       <div className="feedback">
