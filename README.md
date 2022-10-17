@@ -7,23 +7,23 @@ This is the clone of Instagram Application using the modern web technologies.
 </div>
 
 ## Home Page
-<img src="https://github.com/samiullah51/instagramApp-MERN-Stack/blob/main/3.PNG" width="80%" height="450">
+<img src="https://github.com/samiullah51/instagramApp-MERN-Stack/blob/main/frontend/3.PNG" width="80%" height="450">
 
 ## Sign Up Page
-<img src="https://github.com/samiullah51/instagramApp-MERN-Stack/blob/main/2.PNG" width="80%" height="450">
+<img src="https://github.com/samiullah51/instagramApp-MERN-Stack/blob/main/frontend/2.PNG" width="80%" height="450">
 
 ## Sign In Page
-<img src="https://github.com/samiullah51/instagramApp-MERN-Stack/blob/main/1.PNG" width="80%" height="450">
+<img src="https://github.com/samiullah51/instagramApp-MERN-Stack/blob/main/frontend/1.PNG" width="80%" height="450">
 
 ## Single Post with Search functionality
-<img src="https://github.com/samiullah51/instagramApp-MERN-Stack/blob/main/6.PNG" width="60%" height="450">
+<img src="https://github.com/samiullah51/instagramApp-MERN-Stack/blob/main/frontend/6.PNG" width="60%" height="450">
 
 
 ## New Post
-<img src="https://github.com/samiullah51/instagramApp-MERN-Stack/blob/main/7.PNG" width="80%" height="450">
+<img src="https://github.com/samiullah51/instagramApp-MERN-Stack/blob/main/frontend/7.PNG" width="80%" height="450">
 
 ## Profile Page
-<img src="https://github.com/samiullah51/instagramApp-MERN-Stack/blob/main/8.PNG" width="80%" height="450">
+<img src="https://github.com/samiullah51/instagramApp-MERN-Stack/blob/main/frontend/8.PNG" width="80%" height="450">
 
 ## Frontend Technologies
 React/Redux + CSS
